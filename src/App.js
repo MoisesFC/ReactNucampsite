@@ -8,6 +8,7 @@ import CampsiteDetailPage from './pages/CampsiteDetailPage';
 import Footer from './components/Footer';
 import './App.css';
 import AboutPage from './pages/AboutPage';
+import { useRef, useState, useEffect } from 'react';
 
 
 function App() {
