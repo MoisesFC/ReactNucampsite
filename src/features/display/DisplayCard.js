@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, CardBody, CardTitle} from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 const DisplayCard = ({ item }) => {
     const { image, name, description } = item;
@@ -11,7 +11,7 @@ const DisplayCard = ({ item }) => {
                 <CardText>{description}</CardText>
             </CardBody>
         </Card>
-    )
-}
+    );
+};
 
 export default DisplayCard;

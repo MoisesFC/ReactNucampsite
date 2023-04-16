@@ -6,8 +6,8 @@ const Comment = ({ comment }) => {
     return (
         <p>
             {commentText}
-            <br/>
-            {rating}/5 starts -- {author}, {formatDate(date)}
+            <br />
+            {rating}/5 stars -- {author}, {formatDate(date)}
         </p>
     );
 };

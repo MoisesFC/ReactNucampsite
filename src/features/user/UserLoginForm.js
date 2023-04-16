@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { validateUserLoginForm } from '../../utils/validateUserLoginForm';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentUser, selectCurrentUser } from './userSlice';
 import {
@@ -12,12 +11,11 @@ import {
 } from 'reactstrap';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import defaultAvatar from '../../app/assets/img/unicorn.png';
+import { validateUserLoginForm } from '../../utils/validateUserLoginForm';
 
 const UserLoginForm = () => {
     const [loginModalOpen, setLoginModalOpen] = useState(false);
-
     const currentUser = useSelector(selectCurrentUser);
-
     const dispatch = useDispatch();
 
     const handleLogin = (values) => {
@@ -27,7 +25,6 @@ const UserLoginForm = () => {
             username: values.username,
             password: values.password
         };
-
         dispatch(setCurrentUser(currentUser));
         setLoginModalOpen(false);
     };
@@ -54,47 +51,52 @@ const UserLoginForm = () => {
                 )}
             </span>
             <Modal isOpen={loginModalOpen}>
-                <ModalHeader toggle={() => setLoginModalOpen(false)}>Login</ModalHeader>
+                <ModalHeader toggle={() => setLoginModalOpen(false)}>
+                    Login
+                </ModalHeader>
                 <ModalBody>
-                    <Formik initialValues={{
-                        username: "",
-                        password: "",
-                    }}
+                    <Formik
+                        initialValues={{
+                            username: '',
+                            password: ''
+                        }}
                         onSubmit={handleLogin}
-                        validate = { validateUserLoginForm }
+                        validate={validateUserLoginForm}
                     >
                         <Form>
                             <FormGroup>
                                 <Label htmlFor='username'>Username</Label>
                                 <Field
-                                    name='username'
                                     id='username'
-                                    className='form-control'
+                                    name='username'
                                     placeholder='Username'
-                                ></Field>
+                                    className='form-control'
+                                />
                                 <ErrorMessage name='username'>
-                                    {(msg) => <p className='text-danger' >{msg}</p>}
+                                    {(msg) => <p className='text-danger'>{msg}</p>}
                                 </ErrorMessage>
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor='password'>Password</Label>
                                 <Field
-                                    name='password'
                                     id='password'
-                                    className='form-control'
+                                    name='password'
                                     placeholder='Password'
-                                ></Field>
+                                    className='form-control'
+                                />
                                 <ErrorMessage name='password'>
-                                    {(msg) => <p className='text-danger' >{msg}</p>}
+                                    {(msg) => <p className='text-danger'>{msg}</p>}
                                 </ErrorMessage>
                             </FormGroup>
-                            <Button type='submit' color='primary'>Login</Button>
+                            <Button type='submit' color='primary'>
+                                Login
+                            </Button>
                         </Form>
                     </Formik>
                 </ModalBody>
             </Modal>
         </>
-    )
+    );
 };
 
 export default UserLoginForm;

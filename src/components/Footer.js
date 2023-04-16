@@ -10,16 +10,16 @@ const Footer = () => {
                         <h5>Links</h5>
                         <ul className='list-unstyled'>
                             <li>
-                                <Link to="/">Home</Link>
+                                <Link to='/'>Home</Link>
                             </li>
                             <li>
-                                <Link to="/directory">Directory</Link>
+                                <Link to='/directory'>Directory</Link>
                             </li>
                             <li>
-                                <Link to="/about">About</Link>
+                                <Link to='/about'>About</Link>
                             </li>
                             <li>
-                                <Link to="/contact">Contat</Link>
+                                <Link to='/contact'>Contact</Link>
                             </li>
                         </ul>
                     </Col>
@@ -70,7 +70,7 @@ const Footer = () => {
                 </Row>
             </Container>
         </footer>
-    )
-}
+    );
+};
 
 export default Footer;

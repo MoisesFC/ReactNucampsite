@@ -4,10 +4,10 @@ import { validateContactForm } from '../utils/validateContactForm';
 
 const ContactForm = () => {
     const handleSubmit = (values, { resetForm }) => {
-        console.log('form values: ', values);
-        console.log('in JSON format: ', JSON.stringify(values));
+        console.log('form values:', values);
+        console.log('in JSON format:', JSON.stringify(values));
         resetForm();
-    }
+    };
 
     return (
         <Formik
@@ -35,7 +35,7 @@ const ContactForm = () => {
                             className='form-control'
                         />
                         <ErrorMessage name='firstName'>
-                            {(msg) => <p className='text-danger' >{msg}</p>}
+                            {(msg) => <p className='text-danger'>{msg}</p>}
                         </ErrorMessage>
                     </Col>
                 </FormGroup>
@@ -50,7 +50,7 @@ const ContactForm = () => {
                             className='form-control'
                         />
                         <ErrorMessage name='lastName'>
-                            {(msg) => <p className='text-danger' >{msg}</p>}
+                            {(msg) => <p className='text-danger'>{msg}</p>}
                         </ErrorMessage>
                     </Col>
                 </FormGroup>
@@ -65,7 +65,7 @@ const ContactForm = () => {
                             className='form-control'
                         />
                         <ErrorMessage name='phoneNum'>
-                            {(msg) => <p className='text-danger' >{msg}</p>}
+                            {(msg) => <p className='text-danger'>{msg}</p>}
                         </ErrorMessage>
                     </Col>
                 </FormGroup>
@@ -77,10 +77,11 @@ const ContactForm = () => {
                         <Field
                             name='email'
                             placeholder='Email'
+                            type='email'
                             className='form-control'
                         />
                         <ErrorMessage name='email'>
-                            {(msg) => <p className='text-danger' >{msg}</p>}
+                            {(msg) => <p className='text-danger'>{msg}</p>}
                         </ErrorMessage>
                     </Col>
                 </FormGroup>
@@ -90,7 +91,7 @@ const ContactForm = () => {
                             name='agree'
                             type='checkbox'
                             className='form-check-input'
-                        />{"  "}
+                        />{' '}
                         May we contact you?
                     </Label>
                     <Col md='4'>
@@ -106,7 +107,7 @@ const ContactForm = () => {
                 </FormGroup>
                 <FormGroup row>
                     <Label htmlFor='feedback' md='2'>
-                        Your feedback
+                        Your Feedback
                     </Label>
                     <Col md='10'>
                         <Field
