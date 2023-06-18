@@ -14,4 +14,4 @@
 ![Directory Page](./src/app/assets/img/DirectoryPage.png)
 
 ## The following screenshot includes the page of one of the camps. Here, we can see the different comments associated with this object, as well as the button to add new comments, which will be displayed in the list after submission:
-![Campsite Page](./src/app/assets/img/ChromeRiverCampsitePage.png)
+![Campsite Page](./src/app/assets/img/ChromeRiverCamsitePage.png)
